@@ -1,11 +1,11 @@
 #include<iostream>
 using namespace std;
-class shapes
+class shape
 {
 	public:
 		virtual void area(int x)=0;
 };
-class square:public shapes
+class square:public shape
 {
 	public:
 		void area(int x)
@@ -13,20 +13,20 @@ class square:public shapes
 			cout<<"area of square="<<x*x<<endl;
 		}
 };
-class circle:public shapes
+class circle:public shape
 {
 	public:
 		void area(int x)
 		{
-			cout<<"area of circle="<<3.14*r*r;
+			cout<<"area of circle="<<3.14*x*x;
 		}
 };
 int main()
 {
 	square s,*sptr;
 	sptr=&s;
-	s->area(20);
+	sptr->area(20);
 	circle c,*cptr;
 	cptr=&c;
-	c->area(10);
+	cptr->area(20);
 }
